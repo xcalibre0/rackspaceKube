@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-server-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-server
+    spec:
+      containers:
+        - image: gcr.io/google-samples/hello-app:1.0
+          name: hello-server
+          ports:
+            - containerPort: 8080
+              name: custom-port

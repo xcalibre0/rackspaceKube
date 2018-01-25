@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-server
+  labels:
+    app: hello-server
+spec:
+  ports:
+    - port: 8080
+      name: hello-server
+  selector:
+    app: hello-server    
+  type: LoadBalancer
