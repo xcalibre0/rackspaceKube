@@ -48,13 +48,13 @@ func setupRouter() *gin.Engine {
     
     router := gin.Default()
 
-    // Get the correct value for the key provided
+    // Get the correct value for the key provided by url parameter
     router.GET( "/api/objects/:key", process_get_request )
 
     // Insert value stored at form "value" at the key form "key"
     router.POST( "/api/objects", process_post ) 
 
-    // Remove the entry named by form parameter "key"
+    // Remove the entry named by url parameter "key"
     router.DELETE( "/api/objects/:key", process_delete )
 
     return router
